@@ -1,14 +1,11 @@
 # Toolchain
 
-This repository is scaffold-only for the Scheme HorizonLanguage target. It contains baseline coordination files only. No deterministic runtime validation is claimed.
+Scheme native validation uses Chibi Scheme on arm64 macOS.
 
-## Horizon target
+## Proven commands
 
-- Language id: scheme
-- Display name: Scheme
-- Horizon status: future-wave
-- Target class: parity-target
-- Repository: scheme-stakeholder
-## Scaffold scope
+- `chibi-scheme -V`
+- `make compiler-proof`
+- `make test`
 
-Toolchain status: scaffold-only. No compiler, interpreter, formatter, package manager, test runner, or deterministic runtime validation has been selected or proven.
+Toolchain source: Homebrew bottled `chibi-scheme` 0.12. Docker, Nix, and Scheme package managers are not required for the current deterministic first tranche.
