@@ -1,11 +1,6 @@
 # Toolchain
 
-Scheme native validation uses Chibi Scheme on arm64 macOS.
-
-## Proven commands
-
-- `chibi-scheme -V`
-- `make compiler-proof`
-- `make test`
-
-Toolchain source: Homebrew bottled `chibi-scheme` 0.12. Docker, Nix, and Scheme package managers are not required for the current deterministic first tranche.
+- macOS feedback: Homebrew Chibi Scheme 0.12.
+- GitHub native/SAST: Ubuntu 24.04 chibi-scheme package.
+- Docker: Ubuntu 24.04 non-root Chibi runtime.
+- GitHub and Docker are release evidence; Nix remains a development-shell surface.

@@ -1,4 +1,11 @@
-# Docker validation is intentionally deferred for this M1-safe local Scheme tranche.
-# The native validation lane uses Chibi Scheme on macOS.
-FROM alpine:3.20
-CMD ["sh", "-c", "echo 'Docker validation deferred for scheme-stakeholder'; exit 1"]
+FROM ubuntu:24.04
+RUN apt-get update \
+    && apt-get install --yes --no-install-recommends chibi-scheme \
+    && find /var/lib/apt/lists -mindepth 1 -delete \
+    && groupadd --system stakeholder \
+    && useradd --system --gid stakeholder --home-dir /nonexistent --shell /usr/sbin/nologin stakeholder
+WORKDIR /app
+COPY src/stakeholder.scm src/stakeholder.scm
+USER stakeholder
+ENTRYPOINT ["chibi-scheme", "-q", "src/stakeholder.scm"]
+CMD ["--list-values"]
