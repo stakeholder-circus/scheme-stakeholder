@@ -13,7 +13,7 @@ jobs:
       - name: Install Chibi Scheme
         run: |
           sudo apt-get update
-          sudo apt-get install --yes --no-install-recommends chibi-scheme
+          sudo apt-get install --yes --no-install-recommends chibi-scheme chibi-scheme-common
       - run: make compiler-proof
       - run: make analyze
       - run: make test

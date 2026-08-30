@@ -1,6 +1,6 @@
 FROM ubuntu:24.04
 RUN apt-get update \
-    && apt-get install --yes --no-install-recommends chibi-scheme \
+    && apt-get install --yes --no-install-recommends chibi-scheme chibi-scheme-common \
     && find /var/lib/apt/lists -mindepth 1 -delete \
     && groupadd --system stakeholder \
     && useradd --system --gid stakeholder --home-dir /nonexistent --shell /usr/sbin/nologin stakeholder

@@ -17,5 +17,5 @@ jobs:
           persist-credentials: false
       - run: |
           sudo apt-get update
-          sudo apt-get install --yes --no-install-recommends chibi-scheme
+          sudo apt-get install --yes --no-install-recommends chibi-scheme chibi-scheme-common
       - run: make analyze
